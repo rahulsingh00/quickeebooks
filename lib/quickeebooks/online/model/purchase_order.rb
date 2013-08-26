@@ -27,7 +27,7 @@ module Quickeebooks
         xml_accessor :ship_method_id, :from => 'ShipMethodId', :as => Quickeebooks::Online::Model::Id
         xml_accessor :ship_method_name, :from => 'ShipMethodName'
         xml_accessor :line_items, :from => 'Line', :as => [Quickeebooks::Online::Model::PurchaseOrderLineItem]
-        xml_accessor :vendor_id, :from => 'VendorId', :as => Quickeebooks::Windows::Model::Id
+        xml_accessor :vendor_id, :from => 'VendorId', :as => Quickeebooks::Online::Model::Id
         xml_accessor :vendor_name, :from => 'VendorName'
         validates_length_of :line_items, :minimum => 1
 
