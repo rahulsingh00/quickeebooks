@@ -13,7 +13,7 @@ module Quickeebooks
         # Its left to the caller to unlink the file at some later date
         # Returns: +String+ : absolute path to file on disk or nil if couldn't fetch PDF
         def purchase_order_as_pdf(purchase_order_id, destination_file_name)
-          response = do_http_get("#{url_for_resource("purchaseorder-document")}/#{purchase_order_id}", {}, {'Content-Type' => 'application/pdf'})
+          response = do_http_get("#{url_for_resource("purchaseorder")}/#{purchase_order_id}", {}, {'Content-Type' => 'application/pdf'})
           File.open(destination_file_name, "wb") do |file|
             file.write(response.body)
           end
